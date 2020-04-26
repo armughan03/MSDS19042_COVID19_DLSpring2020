@@ -33,7 +33,7 @@ The Training Accuracy/Loss Curves are:
 Similarly the Validation Curves are:
 ![Resnet18_Validation_FC_ONLY](Images/Renset18_Validation_FC_ONLY.png)
 
-#### For VGG15
+#### For VGG16
 The Training Accuracy/Loss Curves are:
 
 ![VGG16_Training_FC_ONLY](Images/VGG16_FC_Only.png)
@@ -45,16 +45,16 @@ Next I unfreezed few CNN Layers from both models and repeated the same process a
 #### For RESNET18: 
 The Training Accuracy/Loss Curves are:
 
-![Renset18_Full](Images/Renset18_Full.png)
+![Renset18_Full](Images/Resnet18_Full.png)
 Similarly the Validation Curves are:
 ![Renset18_Validation_Full](Images/Renset18_Validation_Full.png)
 
-#### For VGG15
+#### For VGG16
 The Training Accuracy/Loss Curves are:
 
 ![VGG16_Few_CNNs_Only](Images/VGG16_Few_CNNs_Only.png)
 Similarly the Validation Curves are:
-![VGG16_Validation_Few_CNNs_Only](Images/VGG16_Validation_Few_CNNs_Only.png)
+![VGG16_Validation_Few_CNNs_Only](Images/VGG16_Validation_Few_CNNs_ONLY.png.png)
 
 
 ## Trained Models:

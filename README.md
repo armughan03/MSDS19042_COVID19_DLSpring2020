@@ -54,7 +54,7 @@ The Training Accuracy/Loss Curves are:
 
 ![VGG16_Few_CNNs_Only](Images/VGG16_Few_CNNs_Only.png)
 Similarly the Validation Curves are:
-![VGG16_Validation_Few_CNNs_ONLY](Images/VGG16_Validation_Few_CNNs_ONLY.png.png)
+![VGG16_Validation_Few_CNNs_ONLY](Images/VGG16_Validation_Few_CNNs_ONLY.png)
 
 
 ## Trained Models:

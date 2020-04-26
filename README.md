@@ -22,7 +22,8 @@ In PyTorch, each layer's weights are stored in a Tensor. Each tensor has an attr
 
 ## Task Details:
 So in these two tasks, I have to fine tuned the layers in the models. So first, I just fetched the pre trained models of RESNET18 and VGG16. In both models, I just delete the last Fully Connected (FC) Layer and then fine tuned the output FC Layer according to my dataset as the pretrained models were trained on 1000 class outputs while here we had only two classes i.e. (Infected, Normal) so I added two new FC layers. One was the layer with the size of 4300 neurons because the formula for this one was (Last two digits of My University Roll Number (42 is mine) * 100 + 100 ), and the last one was the layer with 2 neurons as output because of our classes. This process is done in both models. For RESNET18 the Training Accuracy/Loss Curves are:
-![RESNET18 the Training Accuracy-Loss Curves](Renset18 FC Only.png)
+
+![Resnet18_Training_FC_ONLY](Renset18 FC Only.png)
 
 
 ## Trained Models:

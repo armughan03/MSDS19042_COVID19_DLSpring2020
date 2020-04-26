@@ -2,7 +2,19 @@
 ## COVID-19 Classification
 In this, I have tried to experiment on few thousand X-Rays of Normal and COVID-19 patients. RESNET18, VGG16 are the two pretrained models that I have chosen for this and done two different experiments.
 First was to simply fine tune the output layer according to the dataset while keeping the all other layers in  both models freezing and other was to unfreeze few CNN layers and then all the network.
-In this assignment we have to train COVID19 data on pretrained RESNET18, VGG16. 
+In this notebook I have to train COVID19 data on pretrained RESNET18, VGG16 by doing Transfer learning and Fine tuning them. 
+
+## Dataset:
+New studies [1] have revealed that the damage done to lungs by infections belonging to the family of coronaviruses (COVID-19, SARS, ARDS etc.) can be observed in X-Ray and CT scan images. With a worldwide shortage of test kits, it is possible that careful analysis of X-Ray and CT scan images may be used in diagnosis of COVID-19 and for the regular assessment while they are recovering. In this assignment, we will use an open source dataset of X-Ray images and train a Convolutional Neural Network to try and detect instances of infections containing COVID-19 and Pneumonia.
+### Dataset Details: 
+This dataset contains X-Ray images from 2 classes:
+|Class	|# of images in training set	|# of images in validation set	|# of images in test set|
+|---|---|---|
+|Infected|	4,919|	615 |	615 |
+|Normal|	7,081|	885	|885 |
+
+Dataset is available on this following link: https://drive.google.com/open?id=1-HQQciKYfwAO3oH7ci6zhg45DduvkpnK
+
 
 ## Trained Models:
 All the trained models can be found at: https://drive.google.com/open?id=1Vh9kLEUMKrnnYqpGTaPxx8gA7j-Pyx90

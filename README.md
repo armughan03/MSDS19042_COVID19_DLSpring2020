@@ -13,7 +13,7 @@ This dataset contains X-Ray images from 2 classes:
 | Infected 	| 4919                        	| 615                           	| 615                     	|
 | Normal   	| 7081                        	| 885                           	| 885                     	|
 
-![Image of Sample Dataset](Sample.png)
+![Image of Sample Dataset](Images\Sample.png)
 Dataset is available on this following link: https://drive.google.com/open?id=1-HQQciKYfwAO3oH7ci6zhg45DduvkpnK
 
 
@@ -21,10 +21,20 @@ Dataset is available on this following link: https://drive.google.com/open?id=1-
 In PyTorch, each layer's weights are stored in a Tensor. Each tensor has an attribute called ‘requires_grad’, which specifies if a layer needs training or not. In fine-tuning tasks, we freeze our pre-trained networks to a certain layer and update all the bottom layers. In PyTorch we can loop through our network layers and set ‘requires_grad’ to False for all the layers that we want to be freezed. We will set ‘requires_grad’ to True for any layer we want to fine-tune. 
 
 ## Task Details:
-So in these two tasks, I have to fine tuned the layers in the models. So first, I just fetched the pre trained models of RESNET18 and VGG16. In both models, I just delete the last Fully Connected (FC) Layer and then fine tuned the output FC Layer according to my dataset as the pretrained models were trained on 1000 class outputs while here we had only two classes i.e. (Infected, Normal) so I added two new FC layers. One was the layer with the size of 4300 neurons because the formula for this one was (Last two digits of My University Roll Number (42 is mine) * 100 + 100 ), and the last one was the layer with 2 neurons as output because of our classes. This process is done in both models. For RESNET18 the Training Accuracy/Loss Curves are:
+So in these two tasks, I have to fine tuned the layers in the models. So first, I just fetched the pre trained models of RESNET18 and VGG16. In both models, I just delete the last Fully Connected (FC) Layer and then fine tuned the output FC Layer according to my dataset as the pretrained models were trained on 1000 class outputs while here we had only two classes i.e. (Infected, Normal) so I added two new FC layers. One was the layer with the size of 4300 neurons because the formula for this one was (Last two digits of My University Roll Number (42 is mine) * 100 + 100 ), and the last one was the layer with 2 neurons as output because of our classes. This process is done in both models. 
+#### For RESNET18: 
+The Training Accuracy/Loss Curves are:
 
-![Resnet18_Training_FC_ONLY](Renset18_FC_Only.png)
+![Resnet18_Training_FC_ONLY](Images\Renset18_FC_Only.png)
+Similarly the Validation Curves are:
+![Resnet18_Validation_FC_ONLY](Images\Renset18_Validation_FC_ONLY.png)
 
+#### For VGG15
+The Training Accuracy/Loss Curves are:
+
+![VGG16_Training_FC_ONLY](Images\VGG16_FC_Only.png)
+Similarly the Validation Curves are:
+![VGG16_Validation_FC_ONLY](Images\VGG16_Validation_FC_ONLY.png)
 
 ## Trained Models:
 All the trained models can be found at: https://drive.google.com/open?id=1Vh9kLEUMKrnnYqpGTaPxx8gA7j-Pyx90

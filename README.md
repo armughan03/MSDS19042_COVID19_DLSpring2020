@@ -22,6 +22,10 @@ In PyTorch, each layer's weights are stored in a Tensor. Each tensor has an attr
 
 ## Task Details:
 So in these two tasks, I have to fine tuned the layers in the models. So first, I just fetched the pre trained models of RESNET18 and VGG16. In both models, I just delete the last Fully Connected (FC) Layer and then fine tuned the output FC Layer according to my dataset as the pretrained models were trained on 1000 class outputs while here we had only two classes i.e. (Infected, Normal) so I added two new FC layers. One was the layer with the size of 4300 neurons because the formula for this one was (Last two digits of My University Roll Number (42 is mine) * 100 + 100 ), and the last one was the layer with 2 neurons as output because of our classes. This process is done in both models. 
+
+### Experimental Setup: 
+Learning rate = 0.001 , number of layers fine-tuned = varies on the model and number of epochs: 10 
+
 #### For RESNET18: 
 The Training Accuracy/Loss Curves are:
 
@@ -36,8 +40,25 @@ The Training Accuracy/Loss Curves are:
 Similarly the Validation Curves are:
 ![VGG16_Validation_FC_ONLY](Images/VGG16_Validation_FC_ONLY.png)
 
+Next I unfreezed few CNN Layers from both models and repeated the same process again and then in the end I unfreezed all layers and trained again on both models 
+
+#### For RESNET18: 
+The Training Accuracy/Loss Curves are:
+
+![Renset18_Full](Images/Renset18_Full.png)
+Similarly the Validation Curves are:
+![Renset18_Validation_Full](Images/Renset18_Validation_Full.png)
+
+#### For VGG15
+The Training Accuracy/Loss Curves are:
+
+![VGG16_Few_CNNs_Only](Images/VGG16_Few_CNNs_Only.png)
+Similarly the Validation Curves are:
+![VGG16_Validation_Few_CNNs_Only](Images/VGG16_Validation_Few_CNNs_Only.png)
+
+
 ## Trained Models:
-All the trained models can be found at: https://drive.google.com/open?id=1Vh9kLEUMKrnnYqpGTaPxx8gA7j-Pyx90
+For each step The models, i have trained, were dumped on the google drive. All the trained models can be found at: https://drive.google.com/open?id=1Vh9kLEUMKrnnYqpGTaPxx8gA7j-Pyx90
 
 ### Analysis on each task and comparison of experiments to each other:
 In task 1, when we only trained only last layer, it caused a lot of over fitting in both models and the accuracy was too high but again data for COVID19 is too small and too similar to pneumonia. While when I just unfreeze few CNN layers in task 2 models learn few more, but the overfitting was still the problem as we can see in the notebook and images above. Similarly even on fully unfreezed models was still causing the problems of overfitting but far less because of the data as it is too young and immature.

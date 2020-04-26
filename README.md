@@ -14,6 +14,7 @@ This dataset contains X-Ray images from 2 classes:
 | Infected 	| 4919                        	| 615                           	| 615                     	|
 | Normal   	| 7081                        	| 885                           	| 885                     	|
 
+![Image of Sample Dataset](Sample.png)
 Dataset is available on this following link: https://drive.google.com/open?id=1-HQQciKYfwAO3oH7ci6zhg45DduvkpnK
 
 

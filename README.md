@@ -13,7 +13,7 @@ This dataset contains X-Ray images from 2 classes:
 | Infected 	| 4919                        	| 615                           	| 615                     	|
 | Normal   	| 7081                        	| 885                           	| 885                     	|
 
-![Image of Sample Dataset](Images\Sample.png)
+![Image of Sample Dataset](Images/Sample.png)
 Dataset is available on this following link: https://drive.google.com/open?id=1-HQQciKYfwAO3oH7ci6zhg45DduvkpnK
 
 
@@ -25,16 +25,16 @@ So in these two tasks, I have to fine tuned the layers in the models. So first, 
 #### For RESNET18: 
 The Training Accuracy/Loss Curves are:
 
-![Resnet18_Training_FC_ONLY](Images\Renset18_FC_Only.png)
+![Resnet18_Training_FC_ONLY](Images/Renset18_FC_Only.png)
 Similarly the Validation Curves are:
-![Resnet18_Validation_FC_ONLY](Images\Renset18_Validation_FC_ONLY.png)
+![Resnet18_Validation_FC_ONLY](Images/Renset18_Validation_FC_ONLY.png)
 
 #### For VGG15
 The Training Accuracy/Loss Curves are:
 
-![VGG16_Training_FC_ONLY](Images\VGG16_FC_Only.png)
+![VGG16_Training_FC_ONLY](Images/VGG16_FC_Only.png)
 Similarly the Validation Curves are:
-![VGG16_Validation_FC_ONLY](Images\VGG16_Validation_FC_ONLY.png)
+![VGG16_Validation_FC_ONLY](Images/VGG16_Validation_FC_ONLY.png)
 
 ## Trained Models:
 All the trained models can be found at: https://drive.google.com/open?id=1Vh9kLEUMKrnnYqpGTaPxx8gA7j-Pyx90

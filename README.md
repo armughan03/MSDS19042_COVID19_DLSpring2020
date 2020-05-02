@@ -1,5 +1,6 @@
 # MSDS19042_COVID19_DLSpring2020
 ## COVID-19 Classification
+This repository contains code and results for COVID-19 classification assignment by Deep Learning Spring 2020 course offered at Information Technology University, Lahore, Pakistan. This assignment is only for learning purposes and is not intended to be used for clinical purposes
 In this, I have tried to experiment on few thousand X-Rays of Normal and COVID-19 patients. RESNET18, VGG16 are the two pretrained models that I have chosen for this and done two different experiments.
 
 ## Dataset:

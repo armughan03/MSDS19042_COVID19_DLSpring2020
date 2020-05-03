@@ -130,26 +130,34 @@ Learning rate = 0.001 , number of layers fine-tuned = varies on the model and nu
 #### For RESNET18: 
 The Training Accuracy/Loss Curves are:
 
-![Resnet18_Training_Focal_Loss](Images/Resnet18_Focal_Loss_Training_Curve.png)
+![Resnet18_Training_Focal_Loss](Images/Resnet18_Focal_Loss_Training_Curves.png)
+
 Similarly the Validation Curves are:
-![Resnet18_Validation_Focal_Loss](Images/Resnet18_Focal_Loss_Validation_Curve.png)
+
+![Resnet18_Validation_Focal_Loss](Images/Resnet18_Focal_Loss_Validation_Curves.png)
 
 ##### Confusion Metrices:
-![Resnet18_Training_metrices_Focal_Loss](Images/Resnet18_Focal_Loss_Training_Confusion Metrices.png)
+![Resnet18_Training_metrices_Focal_Loss](Images/Resnet18_Focal_Loss_Training_Confusion_Metrices.png)
+
 Similarly the Validation Curves are:
+
 ![Resnet18_Validation_metrices_Focal_Loss](Images/Resnet18_Focal_Loss_Validation_Confusion_Metrices.png)
 
 
 #### For VGG16
 The Training Accuracy/Loss Curves are:
 
-![VGG16_Training_Focal_Loss](Images/VGG16_Focal_Loss_Training_Curve.png)
+![VGG16_Training_Focal_Loss](Images/VGG16_Without_Focal_Loss_Training_Curves.png)
+
 Similarly the Validation Curves are:
-![VGG16_Validation_Focal_Loss](Images/VGG16_Focal_Loss_Validation_Curve.png)
+
+![VGG16_Validation_Focal_Loss](Images/VGG16_Without_Focal_Loss_Validation_Curves.png)
 
 ##### Confusion Metrices:
 ![Resnet18_Training_metrices_Focal_Loss](Images/VGG16_Focal_Loss_Training_Metrices.png)
+
 Similarly the Validation Curves are:
+
 ![Resnet18_Validation_metrices_Focal_Loss](Images/VGG16_Focal_Loss_Validation_Curves.png)
 
 

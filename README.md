@@ -64,3 +64,38 @@ For each step The models, i have trained, were dumped on the google drive. All t
 ### Analysis on each task and comparison of experiments to each other:
 In task 1, when we only trained only last layer, it caused a lot of over fitting in both models and the accuracy was too high but again data for COVID19 is too small and too similar to pneumonia. While when I just unfreeze few CNN layers in task 2 models learn few more, but the overfitting was still the problem as we can see in the notebook and images above. Similarly even on fully unfreezed models was still causing the problems of overfitting but far less because of the data as it is too young and immature.
 
+## Part 02
+In this task we have to finetune again those same two pre trained models: VGG16 & RESNET18. But this time we had different dataset as:
+### Dataset
+In second notebook, We have different dataset containing multi-label and multi-class data as:
+| Class     	| Training Set 	| Validation Set 	|
+|-----------	|--------------	|----------------	|
+| COVID-19  	| 200          	| 28             	|
+| Pneumonia 	| 2000         	| 200            	|
+| Normal    	| 4000      	| 400            	|
+
+The Test set contains 629 samples that are unlabelled. Your task is to train a model using the above two subsets and submit a .csv file containing predictions for the Test set.
+
+Link: https://drive.google.com/file/d/1eytbwaLQBv12psV8I-aMkIli9N3bf8nO/view?usp=sharing
+
+### Task:
+In this multi-class and multi-label problem, we have to use Focal Loss rather than conventional cross entropy loss as compared to first two task. For this we just cannot use the simple cross-entropy as it does not work with multi-label problem so we used BCEWithLogitsLoss because this loss accepts one-hot vectors for targets. This loss automatically applies a sigmoid function.
+
+### Results:
+### Experimental Setup: 
+Learning rate = 0.001 , number of layers fine-tuned = varies on the model and number of epochs: 10 
+
+#### For RESNET18: 
+The Training Accuracy/Loss Curves are:
+
+![Resnet18_Training_Without_Focal_Loss](Images/Resnet18 - Without Focal Loss Training Curve.png)
+Similarly the Validation Curves are:
+![Resnet18_Validation_Without_Focal_Loss](Images/Resnet18 - Without Focal Loss Validation Curve.png)
+
+
+#### For VGG16
+The Training Accuracy/Loss Curves are:
+
+![VGG16_Training_Without_Focal_Loss](Images/VGG16 - Without Focal Loss Training Curve.png)
+Similarly the Validation Curves are:
+![VGG16_Validation_Without_Focal_Loss](Images/VGG16 - Without Focal Loss Validation Curve.png)

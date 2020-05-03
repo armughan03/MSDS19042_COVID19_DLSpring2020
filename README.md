@@ -90,26 +90,34 @@ Learning rate = 0.001 , number of layers fine-tuned = varies on the model and nu
 The Training Accuracy/Loss Curves are:
 
 ![Resnet18_Training_Without_Focal_Loss](Images/Resnet18_Without_Focal_Loss_Training_Curve.png)
+
 Similarly the Validation Curves are:
-![Resnet18_Validation_Without_Focal_Loss](Images/Resnet18_Without_Focal_Loss_Validation_Curve.png)
+
+![Resnet18_Validation_Without_Focal_Loss](Images/Resnet18_Without_Focal_Loss_Validation_Curves.png)
 
 ##### Confusion Metrices:
 ![Resnet18_Training_metrices_Without_Focal_Loss](Images/Resnet18_Without_Focal_Loss_Training_Confusion Metrices.png)
-Similarly the Validation Curves are:
+
+Similarly the Validation Metrices are:
+
 ![Resnet18_Validation_metrices_Without_Focal_Loss](Images/Resnet18_Without_Focal_Loss_Validation_Confusion_Metrices.png)
 
 
 #### For VGG16
 The Training Accuracy/Loss Curves are:
 
-![VGG16_Training_Without_Focal_Loss](Images/VGG16_Without_Focal_Loss_Training_Curve.png)
+![VGG16_Training_Without_Focal_Loss](Images/VGG16_Without_Focal_Loss_Training_Curves.png)
+
 Similarly the Validation Curves are:
-![VGG16_Validation_Without_Focal_Loss](Images/VGG16_Without_Focal_Loss_Validation_Curve.png)
+
+![VGG16_Validation_Without_Focal_Loss](Images/VGG16_Without_Focal_Loss_Validation_Curves.png)
 
 ##### Confusion Metrices:
 ![Resnet18_Training_metrices_Without_Focal_Loss](Images/VGG16_Without_Focal_Loss_Training_Metrices.png)
-Similarly the Validation Curves are:
-![Resnet18_Validation_metrices_Without_Focal_Loss](Images/VGG16_Without_Focal_Loss_Validation_Curves.png)
+
+Similarly the Validation Metrices are:
+
+![Resnet18_Validation_metrices_Without_Focal_Loss](Images/VGG16_Without_Focal_Loss_Validation_Metrices.png)
 
 ## Focal Loss:
 Originally invented by Facebook for Object Detection in RetinaNet [link], focal loss aims at penalizing hard examples more than easy examples. Easy examples are the ones which are classified at a high probability by the network. For example background class in object detection is much abundant as compared to foreground objects. The background class does not have many complex patterns and thus easily distinguished by the classifier. Moreover the more the samples of the background class, the more the model bias towards it. Focal loss was designed to tackle this problem. Here we will present focal loss for a binary class problem. It can be extended to a multi-class problem just as binary cross entropy is extended to multi-class cross-entropy.
@@ -139,9 +147,9 @@ Similarly the Validation Curves are:
 ##### Confusion Metrices:
 ![Resnet18_Training_metrices_Focal_Loss](Images/Resnet18_Focal_Loss_Training_Confusion_Metrices.png)
 
-Similarly the Validation Curves are:
+Similarly the Validation Metrices are:
 
-![Resnet18_Validation_metrices_Focal_Loss](Images/Resnet18_Focal_Loss_Validation_Confusion_Metrices.png)
+![Resnet18_Validation_metrices_Focal_Loss](Images/Resnet18_Focal_Loss_Validation_Metrices.png)
 
 
 #### For VGG16
@@ -149,7 +157,7 @@ The Training Accuracy/Loss Curves are:
 
 ![VGG16_Training_Focal_Loss](Images/VGG16_Without_Focal_Loss_Training_Curves.png)
 
-Similarly the Validation Curves are:
+Similarly the Validation Metrices are:
 
 ![VGG16_Validation_Focal_Loss](Images/VGG16_Without_Focal_Loss_Validation_Curves.png)
 

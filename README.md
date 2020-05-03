@@ -79,7 +79,8 @@ The Test set contains 629 samples that are unlabelled. Your task is to train a m
 Link: https://drive.google.com/file/d/1eytbwaLQBv12psV8I-aMkIli9N3bf8nO/view?usp=sharing
 
 ### Task:
-In this multi-class and multi-label problem, we have to use Focal Loss rather than conventional cross entropy loss as compared to first two task. For this we just cannot use the simple cross-entropy as it does not work with multi-label problem so we used BCEWithLogitsLoss because this loss accepts one-hot vectors for targets. This loss automatically applies a sigmoid function.
+lti-label classification refers to the situation where a single image can have multiple labels. In this assignment, for example, COVID-19 is a special type of Pneumonia. However these are two different classes and a single image can belong to both the classes. Each class will have a separate neuron (classifier).
+In this multi-class and multi-label problem, we have to use Focal Loss rather than conventional cross entropy loss as compared to first two task. Since this is a multi-label classification, we could not use softmax on the last FC layer.  For this we just cannot use the simple cross-entropy as it does not work with multi-label problem so we used BCEWithLogitsLoss because this loss accepts one-hot vectors for targets. This loss automatically applies a sigmoid function.
 
 ### Results:
 ### Experimental Setup: 
@@ -88,14 +89,72 @@ Learning rate = 0.001 , number of layers fine-tuned = varies on the model and nu
 #### For RESNET18: 
 The Training Accuracy/Loss Curves are:
 
-![Resnet18_Training_Without_Focal_Loss](Images/Resnet18 - Without Focal Loss Training Curve.png)
+![Resnet18_Training_Without_Focal_Loss](Images/Resnet18_Without_Focal_Loss_Training_Curve.png)
 Similarly the Validation Curves are:
-![Resnet18_Validation_Without_Focal_Loss](Images/Resnet18 - Without Focal Loss Validation Curve.png)
+![Resnet18_Validation_Without_Focal_Loss](Images/Resnet18_Without_Focal_Loss_Validation_Curve.png)
+
+##### Confusion Metrices:
+![Resnet18_Training_metrices_Without_Focal_Loss](Images/Resnet18_Without_Focal_Loss_Training_Confusion Metrices.png)
+Similarly the Validation Curves are:
+![Resnet18_Validation_metrices_Without_Focal_Loss](Images/Resnet18_Without_Focal_Loss_Validation_Confusion_Metrices.png)
 
 
 #### For VGG16
 The Training Accuracy/Loss Curves are:
 
-![VGG16_Training_Without_Focal_Loss](Images/VGG16 - Without Focal Loss Training Curve.png)
+![VGG16_Training_Without_Focal_Loss](Images/VGG16_Without_Focal_Loss_Training_Curve.png)
 Similarly the Validation Curves are:
-![VGG16_Validation_Without_Focal_Loss](Images/VGG16 - Without Focal Loss Validation Curve.png)
+![VGG16_Validation_Without_Focal_Loss](Images/VGG16_Without_Focal_Loss_Validation_Curve.png)
+
+##### Confusion Metrices:
+![Resnet18_Training_metrices_Without_Focal_Loss](Images/VGG16_Without_Focal_Loss_Training_Metrices.png)
+Similarly the Validation Curves are:
+![Resnet18_Validation_metrices_Without_Focal_Loss](Images/VGG16_Without_Focal_Loss_Validation_Curves.png)
+
+## Focal Loss:
+Originally invented by Facebook for Object Detection in RetinaNet [link], focal loss aims at penalizing hard examples more than easy examples. Easy examples are the ones which are classified at a high probability by the network. For example background class in object detection is much abundant as compared to foreground objects. The background class does not have many complex patterns and thus easily distinguished by the classifier. Moreover the more the samples of the background class, the more the model bias towards it. Focal loss was designed to tackle this problem. Here we will present focal loss for a binary class problem. It can be extended to a multi-class problem just as binary cross entropy is extended to multi-class cross-entropy.
+Consider the following Cross entropy formula:
+![Focal_Loss_Formula](Images/focal_loss_formula.png)
+y is either 1 (class 1) or 0 (class 2). p is the predicted probability in the range [0,1].  We can write this cross entropy loss as CE(p,y) = CE(pt) = −log(pt). Where pt is written as:
+![Focal_Loss_Formula_1](Images/focal_loss_formula_1.png)
+Focal loss is now defined as:
+![Focal_Loss_Formula_2](Images/focal_loss_formula_2.png)
+Here we subtract the original probability from 1. Thus if a class was predicted with high probability, subtracting it from 1 makes it close to 0. Thus its importance in the loss is reduced. Thus our model is not biased towards classes having abundant data which are easy to predict and hence does not ignore the classes with small amounts of data (which are hard to classify). The gamma in the exponent is the focusing parameter. If gamma = 0, then FL becomes the standard CE loss. For gamma > 0, the FL exhibits different behaviors (by deciding how much to penalize the hard and easy examples.)
+
+##### Note: Here we are going to use Focal Loss instead of BCEWithLogitsLoss
+
+### Results:
+### Experimental Setup: 
+Learning rate = 0.001 , number of layers fine-tuned = varies on the model and number of epochs: 10 
+
+#### For RESNET18: 
+The Training Accuracy/Loss Curves are:
+
+![Resnet18_Training_Focal_Loss](Images/Resnet18_Focal_Loss_Training_Curve.png)
+Similarly the Validation Curves are:
+![Resnet18_Validation_Focal_Loss](Images/Resnet18_Focal_Loss_Validation_Curve.png)
+
+##### Confusion Metrices:
+![Resnet18_Training_metrices_Focal_Loss](Images/Resnet18_Focal_Loss_Training_Confusion Metrices.png)
+Similarly the Validation Curves are:
+![Resnet18_Validation_metrices_Focal_Loss](Images/Resnet18_Focal_Loss_Validation_Confusion_Metrices.png)
+
+
+#### For VGG16
+The Training Accuracy/Loss Curves are:
+
+![VGG16_Training_Focal_Loss](Images/VGG16_Focal_Loss_Training_Curve.png)
+Similarly the Validation Curves are:
+![VGG16_Validation_Focal_Loss](Images/VGG16_Focal_Loss_Validation_Curve.png)
+
+##### Confusion Metrices:
+![Resnet18_Training_metrices_Focal_Loss](Images/VGG16_Focal_Loss_Training_Metrices.png)
+Similarly the Validation Curves are:
+![Resnet18_Validation_metrices_Focal_Loss](Images/VGG16_Focal_Loss_Validation_Curves.png)
+
+
+### Trained Models:
+For each step The models, i have trained, were dumped on the google drive. All the trained models can be found at: https://drive.google.com/open?id=1yxjWBMZTxeEOsiPQ-zet3OBOMQU9uDjJ
+
+### Analysis:
+Focal Loss has helped models to understand more than BCELoss and we get better results than the simple loss function. Alpha = 1 and gamme = 2 gave the best results in experiments. While using focal loss, models were training more accurately than BCELoss as there was less overfitting problems and accuracy was going better.
